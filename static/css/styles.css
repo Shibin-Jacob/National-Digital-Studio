@@ -857,7 +857,7 @@ main {
     /* When open */
     .nav-links.open {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0px)  translateX(-25%);
         pointer-events: auto;
     }
 }
