@@ -15,31 +15,31 @@
             <span class="logo-icon">N</span>
             <span class="logo-text">National Digital Studio</span>
         </div>
-        <nav class="nav-links">
-    <a href="{{ url_for('index') }}"
-       class="{% if request.path == url_for('index') %}active{% endif %}">
-        Home
-    </a>
 
-    <a href="{{ url_for('shop') }}"
-       class="{% if request.path.startswith(url_for('shop')) %}active{% endif %}">
-        Shop
-    </a>
+        <!-- Hamburger Button -->
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-    <a href="{{ url_for('services') }}"
-       class="{% if request.path == url_for('services') %}active{% endif %}">
-        Services
-    </a>
+        <!-- Navigation Links -->
+        <nav id="navMenu" class="nav-links">
+            <a href="{{ url_for('index') }}"
+               class="{% if request.path == url_for('index') %}active{% endif %}">Home</a>
 
-    <a href="{{ url_for('contact_page') }}"
-       class="{% if request.path == url_for('contact_page') %}active{% endif %}">
-        Contact
-    </a>
-</nav>
+            <a href="{{ url_for('shop') }}"
+               class="{% if request.path.startswith(url_for('shop')) %}active{% endif %}">Shop</a>
 
+            <a href="{{ url_for('services') }}"
+               class="{% if request.path == url_for('services') %}active{% endif %}">Services</a>
 
+            <a href="{{ url_for('contact_page') }}"
+               class="{% if request.path == url_for('contact_page') %}active{% endif %}">Contact</a>
+        </nav>
     </div>
 </header>
+
 
 <main>
     {% block content %}{% endblock %}
