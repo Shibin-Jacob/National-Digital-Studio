@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section slide-up">
+    <h1>Contact Us</h1>
+    <p class="section-subtitle">
+        Reach out to {{ studio_name }} for bookings, queries and custom orders.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Studio Address</h3>
+            <p>{{ studio_location }}</p>
+            <p style="font-size:0.85rem;color:#9ca3af;">
+                (Exact landmark details you can update here, e.g. near bus stop / school, etc.)
+            </p>
+
+            <h4>Contact Details</h4>
+            <p>Phone: +91-XXXXXXXXXX</p>
+            <p>WhatsApp: +91-XXXXXXXXXX</p>
+            <p>Email: nationaldigitalstudio@example.com</p>
+        </div>
+
+        <div class="card">
+            <h3>Business Hours</h3>
+            <ul style="list-style:none;padding-left:0;font-size:0.9rem;color:#9ca3af;">
+                <li><strong>Monday – Saturday</strong>: 9:00 AM – 8:00 PM</li>
+                <li><strong>Sunday</strong>: 10:00 AM – 2:00 PM (optional)</li>
+            </ul>
+            <p style="font-size:0.8rem;color:#9ca3af;margin-top:0.5rem;">
+                You can edit these timings in the template to match your actual working hours.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Location Map</h3>
+            <p style="font-size:0.85rem;color:#9ca3af;">
+                Here you can embed your Google Maps iframe once you have the exact URL.
+            </p>
+            <div style="
+                margin-top:0.75rem;
+                border-radius:0.8rem;
+                border:1px dashed rgba(148,163,184,0.5);
+                padding:1rem;
+                text-align:center;
+                font-size:0.85rem;
+                color:#9ca3af;
+            ">
+                <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.3909126399094!2d75.87642077574833!3d11.306111849198865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65cc2db0750b1%3A0xca79ddf4096282d4!2sNational%20Digital%20Studio!5e0!3m2!1sen!2sin!4v1764400764351!5m2!1sen!2sin"
+    width="100%"
+    height="250"
+    style="border:0;border-radius:0.8rem;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

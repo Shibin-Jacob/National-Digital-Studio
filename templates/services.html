@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section slide-up">
+    <h1>Our Services</h1>
+    <p class="section-subtitle">
+        At {{ studio_name }}, we offer a complete range of studio and printing services in {{ studio_location }}.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Passport & ID Photos</h3>
+            <ul>
+                <li>Instant passport size photos</li>
+                <li>ID photos for college, job, license, etc.</li>
+                <li>Soft copy (digital) on request</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Printouts & Photostats</h3>
+            <ul>
+                <li>Color & B/W printouts – A4, A3</li>
+                <li>High-quality document printing</li>
+                <li>Photostat (xerox) services</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Seal Works</h3>
+            <ul>
+                <li>Rubber seals</li>
+                <li>Sun stamper seals</li>
+                <li>Custom seals for offices, shops & institutions</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Photo Framing</h3>
+            <ul>
+                <li>Custom frames for portraits & group photos</li>
+                <li>Certificate and award frames</li>
+                <li>Wall decor photo frames</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Custom Gifts & Printing</h3>
+            <ul>
+                <li>Custom calendars</li>
+                <li>Photo mugs</li>
+                <li>ID cards, medals, momentos</li>
+                <li>Award & shield printing</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Data Entry & Post Office Works</h3>
+            <ul>
+                <li>Data entry for Post Office related works</li>
+                <li>Form filling support</li>
+                <li>Basic documentation assistance</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="section slide-up">
+        <h2>Online Orders</h2>
+        <p class="section-subtitle">
+            You can place orders for selected products (like custom cards) directly from our website.
+        </p>
+        <p class="note">{{ kozhi_note }}</p>
+        <p style="font-size:0.9rem;color:#9ca3af;">
+            For other services such as seals, frames, medals or Post Office related work,
+            please contact us or visit our studio.
+        </p>
+        <a href="{{ url_for('shop') }}" class="btn primary">Go to Online Shop</a>
+    </section>
+</section>
+
+{% endblock %}

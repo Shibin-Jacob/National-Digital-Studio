@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section center slide-up">
+    <div class="success-box fade-in">
+        <h1>Order Received 🎉</h1>
+        <p>Thank you, {{ name }}!</p>
+        <p>Your order for <strong>{{ product.name }}</strong> has been submitted successfully.</p>
+        <p>We will contact you shortly to confirm the details and finalize your design.</p>
+        <p class="note">{{ kozhi_note }}</p>
+        <a href="{{ url_for('shop') }}" class="btn secondary">Back to Shop</a>
+    </div>
+</section>
+
+{% endblock %}

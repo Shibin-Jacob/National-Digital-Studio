@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section product-detail slide-up">
+    <div class="product-layout">
+        <div class="product-image fade-in">
+    <div class="product-image-frame">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+    </div>
+</div>
+
+        <div class="product-info">
+            <h1>{{ product.name }}</h1>
+            <p class="price">₹{{ product.price }} <span>/ {{ product.unit }}</span></p>
+            <p>{{ product.short_desc }}</p>
+
+            <ul class="product-details">
+                {% for line in product.details %}
+                <li>{{ line }}</li>
+                {% endfor %}
+            </ul>
+
+            <p><strong>Estimated Delivery:</strong> {{ product.estimated_time }}</p>
+            <p class="note">{{ kozhi_note }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section order-form-section slide-up">
+    <h2>Place Your Order</h2>
+    <p>Please fill in the details below. We will confirm your order via phone or email.</p>
+
+    <form class="order-form" method="POST" action="{{ url_for('order') }}" enctype="multipart/form-data">
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="name">Full Name*</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone*</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity*</label>
+                <div class="quantity-control">
+                    <button type="button" class="qty-btn" data-action="dec">−</button>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    <button type="button" class="qty-btn" data-action="inc">+</button>
+                </div>
+            </div>
+
+
+            <div class="form-group full">
+                <label for="address_line1">Address Line 1*</label>
+                <input type="text" id="address_line1" name="address_line1" required>
+            </div>
+
+            <div class="form-group full">
+                <label for="address_line2">Address Line 2</label>
+                <input type="text" id="address_line2" name="address_line2">
+            </div>
+
+            <div class="form-group">
+                <label for="locality">Locality / Area*</label>
+                <input type="text" id="locality" name="locality" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City*</label>
+                <input type="text" id="city" name="city" placeholder="Kozhikode" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">Pincode*</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_method">Delivery Method*</label>
+                <select id="delivery_method" name="delivery_method" required>
+                    <option value="">Select...</option>
+                    <option value="Store Pickup">Store Pickup (Kunnamangalam)</option>
+                    <option value="Home Delivery">Home Delivery (within Kozhikode)</option>
+                </select>
+            </div>
+
+            <div class="form-group full">
+                <label for="notes">Custom Instructions / Design Notes</label>
+                <textarea id="notes" name="notes" rows="4"
+                          placeholder="Share text, color preferences, and we’ll coordinate design over WhatsApp/email."></textarea>
+            </div>
+        </div>
+
+        <div class="form-group full">
+            <label for="design_files">Design Files (optional)</label>
+            <p class="field-note">
+                Upload necessary files such as logos, photos, or reference designs.
+                Files are only sent with your order email and are not stored on the server.
+            </p>
+
+            <label class="file-upload-btn">
+                <span class="file-upload-label-text">Select files</span>
+                <input type="file" id="design_files" name="design_files" multiple>
+            </label>
+
+            <div id="file-list" class="file-list"></div>
+        </div>
+
+
+        <button type="submit" class="btn primary">Submit Order</button>
+        <p class="tiny-note">By submitting, you agree to be contacted to confirm the order.</p>
+    </form>
+</section>
+
+{% endblock %}

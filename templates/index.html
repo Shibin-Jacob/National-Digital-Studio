@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero fade-in">
+    <div class="hero-content">
+        <h1>Capture Every Moment with <span>National Digital Studio</span></h1>
+        <p>From passport photos to custom mugs, frames, awards and more – your one-stop digital studio in Kunnamangalam, Kozhikode.</p>
+        <div class="hero-actions">
+            <a href="{{ url_for('shop') }}" class="btn primary">Order Custom Cards</a>
+            <a href="#services" class="btn secondary">View Services</a>
+        </div>
+        <p class="hero-note">{{ kozhi_note }}</p>
+    </div>
+    <div class="hero-visual float-up">
+        <div class="hero-card hero-card-1">Passport Photos</div>
+        <div class="hero-card hero-card-2">Photo Frames</div>
+        <div class="hero-card hero-card-3">Custom Prints</div>
+    </div>
+</section>
+
+<section id="services" class="section services slide-up">
+    <h2>Our Core Services</h2>
+    <p class="section-subtitle">All your studio and printing needs under one roof.</p>
+    <div class="grid">
+        <div class="card">
+            <h3>Passport & ID Photos</h3>
+            <p>High-quality passport size and ID photos with instant delivery and digital copies if required.</p>
+        </div>
+        <div class="card">
+            <h3>Printouts & Photostats</h3>
+            <p>Black & white / color printouts in A4, A3 and professional photostat services.</p>
+        </div>
+        <div class="card">
+            <h3>Seal Works</h3>
+            <p>Rubber seals, sun stamper seals and customized office seals for businesses and institutions.</p>
+        </div>
+        <div class="card">
+            <h3>Photo Framing</h3>
+            <p>Custom framing for portraits, certificates, artworks and memorable photographs.</p>
+        </div>
+        <div class="card">
+            <h3>Custom Gifts</h3>
+            <p>Mug printing, custom calendars, medals, momentos and award printing for events.</p>
+        </div>
+        <div class="card">
+            <h3>Data Entry Services</h3>
+            <p>Data entry and form filling support for Post Office and related works.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section highlight slide-up">
+    <div class="highlight-inner">
+        <div>
+            <h2>Featured Product: Custom Business Cards</h2>
+            <p>Give your brand a professional identity with our customizable business card designs.</p>
+            <ul>
+                <li>Premium matte cards</li>
+                <li>Front & back printing</li>
+                <li>Design assistance available</li>
+            </ul>
+            <a href="{{ url_for('product_page', product_id=products[0]['id']) }}" class="btn primary">Order Example Card</a>
+        </div>
+        <div class="highlight-mockup float-up">
+    <div class="card-mock"
+         {% if featured_product %}
+         style="background-image: url('{{ featured_product.image_url }}');"
+         {% endif %}>
+        {% if featured_product %}
+        <div class="card-mock-overlay">
+            <span class="card-mock-title">{{ featured_product.name }}</span>
+            <span class="card-mock-sub">₹{{ featured_product.price }} / {{ featured_product.unit }}</span>
+        </div>
+        {% endif %}
+    </div>
+</div>
+>
+    </div>
+</section>
+
+{% endblock %}

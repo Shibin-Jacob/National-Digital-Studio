@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section center slide-up">
+    <div class="error-box fade-in">
+        <h1>Order Could Not Be Completed</h1>
+        <p>{{ message }}</p>
+        <a href="{{ url_for('shop') }}" class="btn secondary">Back to Shop</a>
+    </div>
+</section>
+
+{% endblock %}

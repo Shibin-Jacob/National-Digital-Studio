@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ studio_name if studio_name else "National Digital Studio" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+<header class="nav">
+    <div class="nav-inner">
+        <div class="logo">
+            <span class="logo-icon">N</span>
+            <span class="logo-text">National Digital Studio</span>
+        </div>
+        <nav class="nav-links">
+    <a href="{{ url_for('index') }}"
+       class="{% if request.path == url_for('index') %}active{% endif %}">
+        Home
+    </a>
+
+    <a href="{{ url_for('shop') }}"
+       class="{% if request.path.startswith(url_for('shop')) %}active{% endif %}">
+        Shop
+    </a>
+
+    <a href="{{ url_for('services') }}"
+       class="{% if request.path == url_for('services') %}active{% endif %}">
+        Services
+    </a>
+
+    <a href="{{ url_for('contact_page') }}"
+       class="{% if request.path == url_for('contact_page') %}active{% endif %}">
+        Contact
+    </a>
+</nav>
+
+
+    </div>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer id="contact" class="footer">
+    <div class="footer-inner">
+        <div>
+            <h3>National Digital Studio</h3>
+            <p>{{ studio_location if studio_location else "Kunnamangalam, Kozhikode, Kerala" }}</p>
+            <p>Phone: +91-XXXXXXXXXX</p>
+            <p>Email: nationaldigitalstudio@example.com</p>
+        </div>
+        <div>
+            <h4>Online Orders</h4>
+            <p class="note">{{ kozhi_note if kozhi_note else "" }}</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{ studio_name if studio_name else "National Digital Studio" }} {{ 2025 }}. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

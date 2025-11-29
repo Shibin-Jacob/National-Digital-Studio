@@ -1,0 +1,47 @@
+[
+  {
+    "id": "minimalist-business-card",
+    "name": "Minimalist Business Card – Matte Finish",
+    "price": 250,
+    "unit": "per 100 cards",
+    "short_desc": "Crisp, modern business cards with your logo and details, printed on premium matte card.",
+    "details": [
+      "Size: Standard 85 x 55 mm",
+      "Paper: 300 GSM matte finish",
+      "Full-color printing (front & back)",
+      "Custom design support available"
+    ],
+    "image_url": "https://gecdesigns.com/_next/image?url=https%3A%2F%2Fasset.gecdesigns.com%2Fimg%2Fvisiting-card-templates%2Fbold-and-creative-business-card-template-for-entrepreneurs-1680966036989-cover.webp&w=1440&q=85",
+    "estimated_time": "2–3 working days after design approval"
+  },
+  {
+    "id": "photo-mug-print",
+    "name": "Custom Photo Mug Printing",
+    "price": 350,
+    "unit": "per mug",
+    "short_desc": "Personalized ceramic mug with your photo, logo or message – perfect for gifts and events.",
+    "details": [
+      "11 oz white ceramic mug",
+      "Full-color sublimation printing",
+      "Dishwasher safe (top rack recommended)",
+      "Ideal for gifts, branding, and events"
+    ],
+    "image_url": "https://rukminim2.flixcart.com/image/480/640/xif0q/mug/j/b/n/beautiful-photo-printed-coffee-mug-for-your-love-customise-original-imah4m5c8gse8ncs.jpeg?q=90",
+    "estimated_time": "1–2 working days"
+  },
+  {
+    "id": "id-card-printing",
+    "name": "Custom ID Card Printing with Lanyard",
+    "price": 120,
+    "unit": "per ID card",
+    "short_desc": "High-quality PVC ID cards for schools, colleges, offices and events.",
+    "details": [
+      "PVC card printing",
+      "Color printing on both sides",
+      "Option for lanyard and holder",
+      "Ideal for staff, students, and visitors"
+    ],
+    "image_url": "https://printingo.in/wp-content/uploads/2021/03/Identity-Card-Material-PVC-Like-ATM-Card-2.jpg",
+    "estimated_time": "2–3 working days"
+  }
+]
